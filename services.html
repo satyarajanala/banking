@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="style.css">
+  <title>HAPPY BANK</title>
+  <style>
+      body {
+          font-family: Arial;
+      }
+
+      /* Style the tab */
+      .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+      }
+
+      /* Style the buttons inside the tab */
+      .tab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+          background-color: #ddd;
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+          background-color: #ccc;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+      }
+  </style>
+</head>
+
+<body>
+    <nav style="width: 100%;">
+      <a href="./contact.html">Contact Us</a>
+      <a href="./netbanking.html">Netbanking</a>
+      <a href="./services.html" class="active">Services</a>
+      <a href="./about.html">About Us</a>
+      <a href="./home.html">Home</a>
+    </nav>
+  <h1>This is services page.</h1>
+
+  <div class="tab">
+      <button class="tablinks active" onclick="openCity(event, 'Loans')">Loans</button>
+      <button class="tablinks" onclick="openCity(event, 'Accounts')">Accounts</button>
+      <button class="tablinks" onclick="openCity(event, 'Cards')">Cards</button>
+      <button class="tablinks" onclick="openCity(event, 'MutualFunds')">Mutual Funds</button>
+      <button class="tablinks" onclick="openCity(event, 'Insurance')">Insurance</button>
+  </div>
+
+  <div id="Loans" class="tabcontent" style="display: block;">
+      <h3>Loans</h3>
+  </div>
+  <div id="Accounts" class="tabcontent">
+      <h3>Accounts</h3>
+  </div>
+  <div id="Cards" class="tabcontent">
+      <h3>Cards</h3>
+  </div>
+  <div id="MutualFunds" class="tabcontent">
+      <h3>Mutual Funds</h3>
+  </div>
+  <div id="Insurance" class="tabcontent">
+      <h3>Insurance</h3>
+  </div>
+
+  <script>
+      function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+      }
+  </script>
+</body>
+
+</html>
